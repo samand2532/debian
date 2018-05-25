@@ -1,0 +1,27 @@
+apt install mergerfs fuse
+
+mkdir, 1 set for the drives to be added, 1 for the location of the combined JBOD
+
+i.e..
+mkdir /mnt/disk{1,2,3,4,5}
+mkdir /mnt/storage
+
+
+edit /etc/fstab
+
+at bottom add...
+
+/mnt/disk*     /mnt/storage     fuse.mergerfs direct_io,defaults,allow_other,minfreespace=50G,fsname=mergerfs 0 0
+
+
+then...
+
+mount -a
+
+then ...
+
+df -h
+
+
+and see if name is shown as of fsname=mergerfs
+
