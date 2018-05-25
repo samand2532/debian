@@ -1,0 +1,11 @@
+nano /etc/apt/sources.list
+
+
+Add the words “contrib non-free” to the end of your mirror:
+      deb http://.../debian/debian/ stretch main contrib non-free
+      
+      
+apt-get update
+apt-get install firmware-linux-free firmware-linux-nonfree
+
+reboot
