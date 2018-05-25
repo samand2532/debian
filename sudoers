@@ -1,0 +1,7 @@
+install sudo as su
+
+nano /etc/sudoers
+
+# User privilege specification
+root        ALL=(ALL:ALL) ALL
+newuser    ALL=(ALL:ALL) ALL
